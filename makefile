@@ -14,10 +14,10 @@ _OBJ = main.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
-$(ODIR)/%.o: %.c $(DEPS)
+$(ODIR)/%.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-hellomake: $(OBJ)
+helloworld: $(OBJ)
 	g++ -o $@ $^ $(CFLAGS) $(LIBS)
 	
 .PHONY: clean
